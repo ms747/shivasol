@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500');
+.body{
+    font-family: 'Roboto Mono', monospace; 
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+    "n n n n n n n n n n n n"
+    "s s s s s s s s s s s s"
+    "f f f f f f f f f f f f"
+    "cu cu cu cu cu cu cu cu cu cu cu cu "                        
+}
+    
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background: black;
+    grid-area: n;
+}
+
+.menu{
+    list-style-type: none;
+    color:white;
+    display: flex;
+}
+
+.menu-item{
+    padding:20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover{
+    cursor: pointer;
+}
+
+.menu-item:hover{
+    background: #222;
+}
+
+.spacer{
+    flex : 1;
+}
+
+.site-branding{
+    font-size:30px;
+}
+
+.img-slider{
+    
+    grid-area: s;
+}
+
+.features{
+    text-align: center;
+    color: #999;
+    /* min-height: 40vh; */
+    background: #222;
+    grid-column: 1/-1;
+    grid-area: f;
+    margin-top: -15px;
+}
+
+.features > h1 {
+    font-size:35px; 
+    margin-top:20px;   
+}
+
+.features p {
+    font-size : 13px;
+}
+
+.features-grid{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 50px;
+    padding: 10px 20px;
+}
+
+#icon{
+    font-size : 80px;
+}
+
+.card{
+    display:grid;
+    grid-template-rows: repeat(3,1fr);
+}
+
+.contact-us{
+    padding-top:20px;
+    grid-area: cu;
+    height: 10vh;
+    background: black;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.social{
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+}
+
+.copyright{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: center;
+}
+
+span{
+    /* font-size: 32px; */
+
+}
+
+#social{
+    /* font-size: 22px; */
+    /* padding:0 10px; */
+}
+
+
+
+button{
+    border: none;
+    padding: 10px 50px;
+    background: transparent;
+    border: 1px solid black;
+}
+
+button:hover{
+    background: #111;
+    color:white;
+}
+
+@media (max-width:600px){
+    .menu .mobile{
+        display: none;
+    }
+
+}
