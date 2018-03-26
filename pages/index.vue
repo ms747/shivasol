@@ -17,54 +17,16 @@
     <section class="features">
         <h1>Features</h1>
         <div class="features-grid">
-            <div class="card">
-                <h2>
-                    <i id="icon" class="fa fa-tv"></i>
-                </h2>
-                <h2 class="feature-subheading">Migration</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos aliquam quisquam, alias rerum consectetur,
-                    sapiente sit voluptates modi earum dolores ipsa est officiis eveniet!</p>
-            </div>
-            <div class="card">
-                <h2>
-                    <i id="icon" class="fa fa-fire"></i>
-                </h2>
-                <h2 class="feature-subheading">Firewall</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos aliquam quisquam, alias rerum consectetur,
-                    sapiente sit voluptates modi earum dolores ipsa est officiis eveniet!</p>
-            </div>
-            <div class="card">
-                <h2>
-                    <i id="icon" class="fa fa-ambulance"></i>
-                </h2>
-                <h2 class="feature-subheading">GPS Tracking</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos aliquam quisquam, alias rerum consectetur,
-                    sapiente sit voluptates modi earum dolores ipsa est officiis eveniet!</p>
-            </div>
-            <div class="card">
-                <h2>
-                    <i id="icon" class="fa fa-plus"></i>
-                </h2>
-                <h2 class="feature-subheading">AMC Services</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos aliquam quisquam, alias rerum consectetur,
-                    sapiente sit voluptates modi earum dolores ipsa est officiis eveniet!</p>
-            </div>
-            <div class="card">
-                <h2>
-                    <i id="icon" class="fa fa-comment"></i>
-                </h2>
-                <h2 class="feature-subheading">Smart School</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos aliquam quisquam, alias rerum consectetur,
-                    sapiente sit voluptates modi earum dolores ipsa est officiis eveniet!</p>
-            </div>
-            <div class="card">
-                <h2>
-                    <i id="icon" class="fa fa-credit-card"></i>
-                </h2>
-                <h2 class="feature-subheading">Web Developement</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quos aliquam quisquam, alias rerum consectetur,
-                    sapiente sit voluptates modi earum dolores ipsa est officiis eveniet!</p>
-            </div>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
+            <Feature/>
         </div>
     </section>
 
@@ -92,12 +54,14 @@
 import "./style.css";
 import MenuItem from "../components/MenuItem";
 import Slide from "../components/Slides";
+import Feature from "../components/FeatureCard";
 import axios from "axios";
 import Siema from 'siema';
 export default {
   components: {
     MenuItem,
-    Slide
+    Slide,
+    Feature
   },
   mounted(){
     let mysiema = new Siema({
