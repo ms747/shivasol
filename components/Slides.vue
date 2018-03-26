@@ -1,13 +1,13 @@
 <template>
 <div class="slide-main-body"> 
 
-    <img :src="imgsrc" alt="" class="slide-image">
+    <img :src="slide.wpimgsrc.imgsrc" alt="" class="slide-image">
 
     <div class="slide-body">
 
         <h1>{{ slide.title.rendered }}</h1>
 
-        <button>{{imgsrcs}}</button>
+        <button>Look</button>
 
     </div>
 </div>
@@ -27,10 +27,11 @@ export default {
 
 <style scoped>
     .slide-image{
-       height: 800px;
-       max-width: 100%;
+       /* max-width: 100%; */
        width: 100%;
+        height: 800px;       
     }
+
 
 
     .slide-body{

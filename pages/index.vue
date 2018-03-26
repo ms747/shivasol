@@ -9,9 +9,9 @@
     </nav>
 
     <section class="img-slider " style="display:flex;">
-       
+        <div class="siema">
             <Slide v-for="myslide in slide" v-bind:key="myslide.id" :slide="myslide" :imgsrcs="slidesImg"/>
-      
+        </div>
     </section>
 
     <section class="features">
@@ -83,13 +83,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- <script src="./node_modules/siema/dist/siema.min.js"></script> -->
     <!-- <script>
-        let mySiema = new Siema({
-            selector: '.siema',
-            perPage: 1,
-            draggable : true,
-            duration: 250,
-            loop:true,
-        });
         setInterval(() => mySiema.next(), 10000)
     </script> -->
 </div>
@@ -100,10 +93,23 @@ import "./style.css";
 import MenuItem from "../components/MenuItem";
 import Slide from "../components/Slides";
 import axios from "axios";
+import Siema from 'siema';
 export default {
   components: {
     MenuItem,
     Slide
+  },
+  mounted(){
+    let mysiema = new Siema({
+        selector: '.siema',
+        perPage: 1,
+        draggable : true,
+        duration: 250,
+        loop:true,
+    });      
+    setInterval(function(){
+        mysiema.next();
+    }.bind(this),10000);       
   },
   data: function() {
     return {
@@ -112,7 +118,7 @@ export default {
       },
       menuitem: [],
       slide: [],
-      slidesImg:[]
+      slidesImg: [],
     };
   },
   async asyncData() {
@@ -124,16 +130,21 @@ export default {
     );
     let imgsrc = [];
     for (let i = 0; i < slides.data.length; i++) {
-        let src = await axios.get(slides.data[i]._links["wp:featuredmedia"]["0"].href);
-        imgsrc.push(...{imgsrc:src.data.source_url});
-        //imgsrc.push({"name":123});
+      let src = await axios.get(
+        slides.data[i]._links["wp:featuredmedia"]["0"].href
+      );
+      imgsrc.push({ imgsrc: src.data.source_url });
+    }
+
+    for (let i = 0; i < slides.data.length; i++) {
+      slides.data[i].wpimgsrc = imgsrc[i];
     }
     return {
       menuitem: menu.data,
       slide: slides.data,
       slidesImg: imgsrc
     };
-  }
+  },
 };
 </script>
 
